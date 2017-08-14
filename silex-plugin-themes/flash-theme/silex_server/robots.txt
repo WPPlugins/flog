@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /cgi/
+Disallow: /tools/
+Disallow: /contents/
+Disallow: /conf/
+Disallow: /install/
+Disallow: /layouts/
+Disallow: /trash/
+Disallow: /ui/
+Sitemap: /sitemap_index.php

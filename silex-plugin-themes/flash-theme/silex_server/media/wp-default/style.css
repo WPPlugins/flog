@@ -1,0 +1,25 @@
+/* Begin Typography & Colors */
+
+p {
+	font-family: Arial;
+	font-size: 12px;
+	color: #052370;
+}
+.headline {
+	font-family: Arial;
+	font-size: 14px;
+	color: #C71616;
+}
+.bURL {
+	font-family: Arial;
+	font-size: 12px;
+	color: #ff0000;
+	text-decoration: underline;
+}
+.bTEXT {
+	font-family: Arial;
+	font-size: 12px;
+	color: #226700;
+}
+
+/* End captions */

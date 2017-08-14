@@ -1,0 +1,317 @@
+﻿
+----------------------------------------------------------------------------------------------------------------------------------------------
+Feeds
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+?feed=silex_pages_feed : liste des pages wp
+?feed=silex_categories_feed : liste des catÅ½gories
+?feed=silex_tags_feed : liste des archives
+?feed=silex_bookmarks_feed : liste des liens
+
+?feed=silex_posts_feed : liste des posts (1 page, soit 10 posts)
+((&paged=<<DataContainer.selection.paged>>))
+((&s=<<DataContainer.selection.s>>))((&cat=<<DataContainer.selection.cat>>))((&tag=<<DataContainer.selection.tag>>))((&author=<<DataContainer.selection.author>>))((&m=<<DataContainer.selection.m>>))((&year=<<DataContainer.selection.year>>))((&day=<<DataContainer.selection.day>>))
+
+?feed=silex_paged_feed * liste du nombre de page
+((&s=<<DataContainer.selection.s>>))((&cat=<<DataContainer.selection.cat>>))((&tag=<<DataContainer.selection.tag>>))((&author=<<DataContainer.selection.author>>))((&m=<<DataContainer.selection.m>>))((&year=<<DataContainer.selection.year>>))((&day=<<DataContainer.selection.day>>))
+
+
+//to do - feed=silex_archives_feed
+
+
+((<<DataContainer.blog.home>>))?feed=
+----------------------------------------------------------------------------------------------------------------------------------------------
+URLs
+----------------------------------------------------------------------------------------------------------------------------------------------
+http://mysite.com/?p=10&no_flash=1
+http://mysite.com/?p=10&flash=1
+http://mysite.com/?p=10&is_framed=1
+http://mysite.com/?p=10&do_reset=1
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+Silex theme page types
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+*	home - recent posts
+		((<<DataContainer.blog.home>>))?feed=silex_paged_feed
+		((<<DataContainer.blog.home>>))?feed=silex_posts_feed((&paged=<<DataSelectorPages.selectedItem.title>>))
+*	single - single post
+		((<<DataContainer.post.ID>>))
+*	page - single page (same as single post page)
+	
+*	archive - archives: Category, Tag, Author and Date (monthly, yearly, daily, NOT time-based for now)
+		((<<DataContainer.blog.home>>))?feed=silex_paged_feed((&s=<<DataContainer.selection.s>>))((&cat=<<DataContainer.selection.cat>>))((&tag=<<DataContainer.selection.tag>>))((&author=<<DataContainer.selection.author>>))((&m=<<DataContainer.selection.m>>))((&year=<<DataContainer.selection.year>>))((&day=<<DataContainer.selection.day>>))
+		((<<DataContainer.blog.home>>))?feed=silex_posts_feed((&paged=<<DataSelectorPages.selectedItem.title>>))((&paged=<<DataContainer.selection.paged>>))((&s=<<DataContainer.selection.s>>))((&cat=<<DataContainer.selection.cat>>))((&tag=<<DataContainer.selection.tag>>))((&author=<<DataContainer.selection.author>>))((&m=<<DataContainer.selection.m>>))((&year=<<DataContainer.selection.year>>))((&day=<<DataContainer.selection.day>>))
+		
+*	search - search = (same as archive page)
+
+*	error404 - not found
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+Technical specifications
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Plugin core (index.php)
+- substitution of the theme
+	if no_flash value in get
+		-> do nothing
+	if is_framed value in get
+		-> Framed theme
+- javascript silex
+	override cSilex::changeSection
+	override cSilex::urlHashChanged
+	override 	cSilex::getIdFromHash and cSilex::setUrlHash
+
+FlashTheme class (FlashTheme.php)
+- inputs
+	constructor params: type of the request (page, posts, single post...)
+	retrieve id_site from options
+	open conf.txt
+- javascript redirection
+	submit form
+	direct access (with # in the URL) <=> if the deeplink is different from post data (postID)
+	build the deeplink in function of conf.txt and postinfo (postID, category, ...)
+- Embed Flash
+	use swfObject
+	Silex embeded technic so that Silex cgi is not needed
+	no flash => redirect to the same page with no_flash value in get
+	FlashVars = pages, categories, tags, archives, blogroll, meta = links with href+asfunction OR array
+- noscript tag
+	content of the WP page
+- noembed tag
+	no flash => redirect to the same page with no_flash value in get
+- html page
+	headers, keywords, meta, ... from the WP page 
+	
+Wordpress "Flash" theme (wp_theme/comments.php, wp_theme/index.php, wp_theme/, wp_theme/
+- all files instanciate the FlashTheme class
+
+Wordpress "Framed" theme
+- used to display the pages and single posts in Flash
+- css
+	transparent background
+	no header nor footer
+- remove or alter links in order to navigate in Flash, not in the frame
+
+
+Admin pannel
+- create your own templates
+	silex links (website, ressources, video)
+	link to the manager if it is installed OR message "Install Silex WYSIWYG"
+- plugin parameters
+	selected template (drop down list)
+	?override WordPress URL rewrite rule (check box) / only if URL rewrite is activated
+	flash by default / html by default
+
+- plugin installer
+	install themes: flash_theme and framed_theme
+	font folder of Silex?
+	Silex installer
+
+
+Silex "WordPress" themes
+- structure
+	single (page, post)
+	list (posts, category, search, archives)
+	credits
+	404
+	
+- links
+	no-flash version
+	lists of pages, tags, categories
+	permalink of the current page
+	project page, silex, wordpress, author of the silex theme
+	wp-admin
+
+		
+	
+--
+sub types (several possible at the same time)
+is_front_page
+is_paged
+
+is_author
+
+is_tag
+is_category
+is_date
+is_year
+is_month
+is_day
+is_time 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+processes / dev notes 
+----------------------------------------------------------------------------------------------------------------------------------------------
+http://mysite.com/?p=10
+-> http://mysite.com/#start/single/p=10/
+-> if no flash => read $no_flash_page from session http://mysite.com/?p=10&no_flash=1
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+IdÃ©es de noms
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+SilexPress
+FPress
+OSFlashPress
+WordPress OSF
+Flashoot
+
+-> WordPress OSFlash templates / WordPress OSF
+
+WordPress Flash templates
+WF templates
+
+
+WordPress2ActionScript 
+WordPress2Flash
+
+CMS2Flash plugin
+
+Wordplex
+Wordplex OS
+Wordplex OSFlash
+
+
+SXPress OS
+sxPress 
+SX-Press Flash-OS
+SX+Press Flash+OS
+SXPress FlashOS
+SXPress-FlashOS
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+Notes
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+WP URLs
+
+recent posts
+> is_front_page() 
+> is_home() 
+> /
+> /?paged=1
+
+single post
+> is_single() 
+> /?p=12
+
+single page
+> is_page() 
+> /?page_id=15
+	p=27 - use the post ID to show that post
+	name=about-my-life - query for a particular post that has this Post Slug
+	page_id=7 - query for just Page ID 7
+	pagename=about - note that this is not the page's title, but the page's path
+	showposts=1 - use showposts=3 to show 3 posts. Use showposts=-1 to show all posts
+	'post__in' => array(5,12,2,14,7) - inclusion, lets you specify the post IDs to retrieve
+	'post__not_in' => array(6,2,8) - exclusion, lets you specify the post IDs NOT to retrieve
+	'post_type=page' - returns Pages; defaults to value of post; can be any, attachment, page, or post.
+
+tag list
+> /?tag=atag
+> is_tag() 
+		tag
+		tag__and
+		tag__in
+		tag_slug__and
+		tag_slug__in
+
+
+category list
+> /?cat=4
+> is_category() 
+		cat
+		category_name
+		category__and
+		category__in
+		category__not_in
+
+
+search
+> /?s=lorem
+> is_search()
+
+archives
+> /?paged=2
+> is_paged() 
+
+
+author list
+> /?author=0
+> is_author() 
+		author=3
+		author=-3 - exclude author id 3 posts
+		author_name=Harriet
+
+
+404
+> /?p=99999999999999999999999999999999999
+> is_404() 
+
+ARCHIVES
+is_archive()  -> When any type of Archive page is being displayed. Category, Tag, Author and Date based pages are all types of Archives.
+
+time 
+		hour= - hour (from 0 to 23)
+		minute= - minute (from 0 to 60)
+		second= - second (0 to 60)
+		day= - day of the month (from 1 to 31)
+		monthnum= - month number (from 1 to 12)
+		year= - 4 digit year (e.g. 2009)
+		w= - week of the year (from 0 to 53) and uses the MySQL WEEK command Mode=1.
+
+year
+> /?year=2009
+> is_year() 
+
+month 
+> /?m=july
+> /?monthnum=7
+> is_month() 
+
+day
+> /?day=12
+> is_day() 
+
+time * not used for now
+> is_time() 
+
+http://codex.wordpress.org/Template_Tags/query_posts
+> all the parameters of the query
+
+http://codex.wordpress.org/Conditional_Tags
+> all the is_*
+
+
+-----------------------------------------
+
+-<?php echo get_option('permalink_structure'); ?>- /%year%/%monthnum%/%postname%/
+-<?php echo get_option('category_base'); ?>-
+-<?php echo get_option('tag_base'); ?>-
+-<?php echo get_option('blogname'); ?>-
+-<?php echo get_option('admin_email'); ?>-
+
+	<?php 
+		$_array = Array();
+		$_array[] = is_front_page;
+		$_array[] = is_home;
+		$_array[] = is_single;
+		$_array[] = is_page;
+		$_array[] = is_tag;
+		$_array[] = is_category;
+		$_array[] = is_search;
+		$_array[] = is_paged;
+		$_array[] = is_author;
+		$_array[] = is_404;
+		$_array[] = is_archive;
+		$_array[] = is_date;
+		$_array[] = is_year;
+		$_array[] = is_month;
+		$_array[] = is_day;
+		$_array[] = is_time;
+		foreach($_array as $func){
+			echo $func.' = '.$func().'<br>';
+		}
+	?>

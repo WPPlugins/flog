@@ -1,0 +1,31 @@
+#silex url rewrite begin
+RewriteEngine  on
+
+RewriteBase %rewritebase%
+####################
+# redirect to sitemap.php
+
+RewriteCond %{REQUEST_FILENAME} ^.*/sitemap_index.xml$
+RewriteRule ^(.*)$ sitemap_index.php?scriptUrl=%{SERVER_NAME}%{REQUEST_URI} [QSA]
+
+####################
+# redirect to redirect.php (with desired id_site)
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !^.*/media/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/contents/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/components/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/layouts/.*$
+
+RewriteCond %{REQUEST_FILENAME} !^.*/cgi/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/conf/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/logs/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/tools/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/trash/.*$
+RewriteCond %{REQUEST_FILENAME} !^.*/ui/.*$
+
+RewriteRule ^(.*)$ redirect.php?path=$1 [QSA]
+
+#silex url rewrite end

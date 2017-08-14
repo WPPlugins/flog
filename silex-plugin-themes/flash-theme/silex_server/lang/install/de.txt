@@ -1,0 +1,37 @@
+; translatetd with SILEX UI Translation
+; please report bugs to drugBox < drugbox-de [at] sourceforge [dot] net > 
+
+TITLE=Silex Installer&
+STEP1=Schritt 1&
+STEP2=Schritt 2&
+STEP3=Schritt 3&
+WELCOME_INTRO_1=Ok, wir werden jetzt gemeinsam&
+WELCOME_INTRO_2=Installieren.&
+WELCOME_RUN_TESTS=Aber vorher, sollten wir noch einigne Tests durchführen&
+WELCOME_LABEL_BUTTON=dann mal los...&
+WELCOME_CHOOSE_LANGUAGE_DESCRIPTION=sprache wechseln&
+WELCOME_CHOOSE_LANGUAGE_BUTTON=wechseln&
+ACCOUNT_SERVER_ALREADY_INSTALLED=Es ist bereits ein silex server installiert.&
+ACCOUNT_ASK_LOGIN=Bitte einloggn:&
+ACCOUNT_LOGIN=Benutzer:&
+ACCOUNT_PASSWORD=Passwort:&
+ACCOUNT_NEXT=weiter&
+ACCOUNT_SERVER_ABLE=Auf deinem Server kann Silex laufen.&
+ACCOUNT_CHOOSE_LOGIN_AND_PASSWORD=Bitte wähle einen Namen und ein Passwort für deinen Account :&
+ACCOUNT_CREATED=Administrator-Account erstellt&
+SERVER_INSTALLED=Der Server ist erfolgreich installiert.&
+LAST_STEP=Der letzte Schritt ist URL-Rewritting&
+URL_REWRITING_SUCCESS=URL-Rewriting wurde erfolgreich installiert.&
+THATS_IT=Das war alles! Jetzt its alles bereit um&
+GOTO_MANAGER=zum Manager zu gehen&
+URL_REWRITING_OK=URL-Rewriting wurde erfolgreicht installiert&
+URL_REWRITING_NOK=Ihr Server unterstützt URL-Rewriting nicht.&
+URL_REWRITING_NOK_SO_WHAT=Ohne kann die Seite nicht für Suchmaschienen Katalogisiert werden&
+TEST_RIGHTS_HAS_RIGHTS=' hat Lese-, Schreib und Ausführungsrechte' &
+TEST_RIGHTS_HAS_NO_RIGHTS=hat KEINE Lese-, Schreib und Ausführungsrechte&
+TEST_RIGHTS_CHMOD_OK=Die Zugriffsrechte wurden zu 755 geändert&
+TEST_RIGHTS_CHMOD_NOK=Fehler: Die Zugrifsrechte konnten nicht zu 755 geändert werden.&
+TEST_RIGHTS_HELP=[TEST_RIGHTS_HELP]&
+TEST_SESSION_HELP=Ihr Host unterstützt keine Sessions. Silex braucht dies jedoch um richtig zu funktionieren.&
+TEST_PHP_VERSION_HELP=[TEST_PHP_VERSION_HELP]&
+TEST_SET_INCLUDE_PATH_HELP=Ihr Host unterstützt keine änderungen am include_path. Silex muss dieses jedoch ändern können um richtig zu funktionieren&

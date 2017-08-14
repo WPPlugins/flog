@@ -1,0 +1,47 @@
+﻿; translated with SILEX UI Translation
+; please report bugs to drugBox < drugbox-de [at] sourceforge [dot] net > 
+
+;general
+TITLE=Silex Installateur&
+STEP1=Stap 1&
+STEP2=Stap 2&
+STEP3=Stap 3&
+
+;step1
+WELCOME_INTRO_1=Ok, we gaan nu &
+WELCOME_INTRO_2=samen installeren. &
+WELCOME_RUN_TESTS=Eerst moeten we enkele testen doen. &
+WELCOME_LABEL_BUTTON=Ga door!&
+WELCOME_CHOOSE_LANGUAGE_DESCRIPTION=taal wijzigen&
+WELCOME_CHOOSE_LANGUAGE_BUTTON=wijzigen&
+
+;step2
+ACCOUNT_SERVER_ALREADY_INSTALLED=Jouw Silex server is reeds geïnstalleerd.&
+ACCOUNT_ASK_LOGIN=Gelieve in te loggen:&
+ACCOUNT_LOGIN=login :&
+ACCOUNT_PASSWORD=paswoord :&
+ACCOUNT_NEXT=Volgende&
+ACCOUNT_SERVER_ABLE=Je server is in staat Silex te laten draaien.&
+ACCOUNT_CHOOSE_LOGIN_AND_PASSWORD=Gelieve een login en een paswoord te kiezen voor je accountbeheer : &
+
+;step3
+ACCOUNT_CREATED=beheerdersaccount gecreëerd&
+SERVER_INSTALLED=De server is met succes geïnstalleerd.&
+LAST_STEP=De laatste stap is URL-rewriting&
+URL_REWRITING_SUCCESS=URL rewriting is met succes geconfigureerd&
+THATS_IT=Da's alles! Als je klaar bent, kunnen we nu,&
+GOTO_MANAGER=naar de manager gaan&
+URL_REWRITING_OK=URL rewriting is met succes geconfigureerd&
+URL_REWRITING_NOK=Uw host ondersteunt URL-rewriting niet &
+URL_REWRITING_NOK_SO_WHAT=Zonder URL Rewriting zal uw site niet gevonden worden door zoekmachines&
+
+;tests
+TEST_RIGHTS_HAS_RIGHTS= heeft het recht te lezen, schrijven en uit te voeren&
+TEST_RIGHTS_HAS_NO_RIGHTS=heeft niet het recht te lezen, schrijven of uit te voeren&
+TEST_RIGHTS_CHMOD_OK=De toegansrechten zijn gewijzigd in 755&
+TEST_RIGHTS_CHMOD_NOK=Error: de toegangsrechten konden niet gewijzigd worden in 755&
+TEST_RIGHTS_HELP=U hebt geen toegangsrechten op dit bestand en Silex kon deze niet wijzigen voor u. Dit wil zeggen dat u geen modellen kan bouwen met Silex, maar wel een bezoeker kan zijn. Tracht de rechten zelf te wijzigen, met uw FTP-client bijvoorbeeld.<br/> <br/> Silex heeft nood aan lees-, schrijf- en uitvoerrechten op volgende mappen: media, contents, logs en cgi/scripts/upload.cgi .<br/>Indien dit niet mogelijk is, kan u deze site gebruiken als raadpleging. Om dit te doen, dient u volgend leeg bestand aan te maken: conf/pass.php&
+
+TEST_SESSION_HELP=Uw hoster staat geen sessies toe. Silex heeft sessies nodig om correct te draaien&
+TEST_PHP_VERSION_HELP= Silex heeft nood aan PHP5 of hoger. Sommiger hosters bieden een oudere versie aan van PHP, en soms kan dit aangepast worden. Om dit te doen, creëert u een bestand .htaccess in de root van Silex, en probeer op verschillende manieren de versie van PHP naar 5 te brengen. Probeer een van volgende regels toe te voegen aan .htaccess, en vernieuw het scherm. Indien dit niet werkt, probeer dan een andere  <br/> <br/> SetEnv PHP_VER 5 <br/> AddHandler x-httpd-php5 .php  <br/> AddType x-mapp-php5 .php <br/>AddType application/x-httpd-php5 .php<br/>&
+TEST_SET_INCLUDE_PATH_HELP=Uw hoster ondersteunt set_include_path niet. Silex heeft set_include_path nodig om correct te draaien. &

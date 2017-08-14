@@ -1,0 +1,80 @@
+onLoad DataContainer.post.ID=<<_root.post_ID>>
+
+// BLOG INFO - see http://codex.wordpress.org/Bloginfo#Parameters
+onLoad DataContainer.blog.admin_email=<<_root.blog_admin_email>>
+onLoad DataContainer.blog.atom_url=<<_root.atom_url>>
+onLoad DataContainer.blog.charset=<<_root.charset>>
+onLoad DataContainer.blog.comments_atom_url=<<_root.comments_atom_url>>
+onLoad DataContainer.blog.comments_rss2_url=<<_root.comments_rss2_url>>
+onLoad DataContainer.blog.description=<<_root.description>>
+
+onLoad DataContainer.blog.home=<<_root.home>>
+onLoad DataContainer.blog.html_type=<<_root.html_type>>
+onLoad DataContainer.blog.language=<<_root.language>>
+onLoad DataContainer.blog.name=<<_root.name>>
+onLoad DataContainer.blog.pingback_url=<<_root.pingback_url>>
+onLoad DataContainer.blog.rdf_url=<<_root.rdf_url>>
+onLoad DataContainer.blog.rss2_url=<<_root.rss2_url>>
+onLoad DataContainer.blog.rss_url=<<_root.rss_url>>
+onLoad DataContainer.blog.siteurl=<<_root.siteurl>>
+onLoad DataContainer.blog.stylesheet_directory=<<_root.stylesheet_directory>>
+onLoad DataContainer.blog.stylesheet_url=<<_root.stylesheet_url>>
+onLoad DataContainer.blog.template_directory=<<_root.template_directory>>
+onLoad DataContainer.blog.template_url=<<_root.template_url>>
+onLoad DataContainer.blog.text_direction=<<_root.text_direction>>
+onLoad DataContainer.blog.url=<<_root.url>>
+onLoad DataContainer.blog.version=<<_root.version>>
+onLoad DataContainer.blog.wpurl=<<_root.wpurl>>
+
+// USER INFO - see http://codex.wordpress.org/Function_Reference/wp_get_current_user
+onLoad DataContainer.user.login=<<_root.user_login>>
+onLoad DataContainer.user.level=<<_root.user_level>>
+onLoad DataContainer.user.ID=<<_root.user_ID>>
+onLoad DataContainer.user.email=<<_root.user_email>>
+onLoad DataContainer.user.url=<<_root.user_url>>
+onLoad DataContainer.user.name=<<_root.display_name>>
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+// POST INFO - see http://codex.wordpress.org/WPMU_Functions/get_blog_post
+onLoad DataContainer.post.ID=<<_root.post_ID>>
+onLoad DataContainer.post.guid=<<_root.post_guid>>
+onLoad DataContainer.post.title=<<_root.post_title>>
+onLoad DataContainer.post.name=<<_root.post_name>>
+onLoad DataContainer.post.content=<<_root.post_content>>
+onLoad DataContainer.post.excerpt=<<_root.post_excerpt>>
+onLoad DataContainer.post.content_filtered=<<_root.post_content_filtered>>
+onLoad DataContainer.post.type=<<_root.post_type>>
+onLoad DataContainer.post.tags_input=<<_root.post_tags_input>>
+onLoad DataContainer.post.status=<<_root.post_status>>
+onLoad DataContainer.post.author=<<_root.post_author>>
+onLoad DataContainer.post.parent=<<_root.post_parent >>
+onLoad DataContainer.post.date=<<_root.post_date>>
+onLoad DataContainer.post.date_gmt=<<_root.post_date_gmt>>
+onLoad DataContainer.post.modified=<<_root.post_modified>>
+onLoad DataContainer.post.modified_gmt=<<_root.post_modified_gmt>>
+onLoad DataContainer.post.ping_status=<<_root.post_ping_status>>
+onLoad DataContainer.post.to_ping=<<_root.post_to_ping>>
+onLoad DataContainer.post.pinged=<<_root.post_pinged>>
+onLoad DataContainer.post.menu_order=<<_root.post_menu_order>>
+onLoad DataContainer.post.mime_type=<<_root.post_mime_type>>
+onLoad DataContainer.post.comment_count=<<_root.post_comment_count>>
+// ! category is an ARRAY !
+onLoad DataContainer.post.category=<<_root.post_category>>
+
+
+// AUTHOR INFO - see http://codex.wordpress.org/Function_Reference/get_the_author
+onLoad DataContainer.author.url=<<_root.author_url>>
+onLoad DataContainer.author.registered=<<_root.author_registered>>
+onLoad DataContainer.author.status=<<_root.author_status>>
+onLoad DataContainer.author.nickname=<<_root.author_nickname>>
+onLoad DataContainer.author.description=<<_root.author_description>>
+onLoad DataContainer.author.level=<<_root.author_level>>
+onLoad DataContainer.author.ID=<<_root.author_ID>>
+
+
